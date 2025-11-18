@@ -1,0 +1,119 @@
+# Preprocessing Pipeline
+Input images are converted to RGB, resized to 256x256, and saved as JPEG.
+Normalization to 0-1 is applied during model input.
+Augmentation is applied to the training pipeline only.
+Stratified split maintains class balance with 70/30 train/test.
+Processed dataset layout under output_dir: all/, train/, test/.
+Class counts after preprocessing:
+- Adristyrannus: 186
+- Aleurocanthus spiniferus: 414
+- Ampelophaga: 458
+- Aphis citricola Vander Goot: 210
+- Apolygus lucorum: 228
+- Beet spot flies: 179
+- Black hairy: 329
+- Chlumetia transversa: 183
+- Cicadella viridis: 767
+- Cicadellidae: 3444
+- Dacus dorsalis(Hendel): 263
+- Dasineura sp: 303
+- Field Cricket: 250
+- Fruit piercing moth: 374
+- Gall fly: 490
+- Icerya purchasi Maskell: 433
+- Indigo caterpillar: 463
+- Jute Stem Weevil: 360
+- Jute aphid: 386
+- Jute hairy: 429
+- Jute red mite: 346
+- Jute semilooper: 391
+- Jute stem girdler: 301
+- Jute stick insect: 344
+- Lawana imitata Melichar: 346
+- Leaf beetle: 316
+- Limacodidae: 840
+- Locust: 331
+- Locustoidea: 836
+- Lycorma delicatula: 3186
+- Mealybug: 356
+- Miridae: 3048
+- Panonchus citri McGregor: 231
+- Papilio xuthus: 269
+- Phyllocnistis citrella Stainton: 242
+- Pieris canidia: 281
+- Pod borer: 405
+- Potosiabre vitarsis: 565
+- Prodenia litura: 782
+- Pseudococcus comstocki Kuwana: 184
+- Rhytidodera bowrinii white: 333
+- Rice Stemfly: 221
+- Salurnis marginella Guerr: 292
+- Scirtothrips dorsalis Hood: 484
+- Spilosoma Obliqua: 250
+- Sternochetus frigidus: 274
+- Termite: 331
+- Termite odontotermes (Rambur): 361
+- Tetradacus c Bactrocera minax: 232
+- Thrips: 527
+- Trialeurodes vaporariorum: 415
+- Unaspis yanonensis: 251
+- Viteus vitifoliae: 212
+- Xylotrechus: 690
+- Yellow Mite: 250
+- alfalfa plant bug: 393
+- alfalfa weevil: 314
+- aphids: 2456
+- army worm: 639
+- asiatic rice borer: 631
+- beet army worm: 962
+- beet weevil: 184
+- beetle: 312
+- bird cherry-oataphid: 424
+- black cutworm: 512
+- blister beetle: 1138
+- bollworm: 312
+- brown plant hopper: 500
+- cabbage army worm: 513
+- corn borer: 1018
+- earwig: 390
+- english grain aphid: 392
+- flax budworm: 639
+- flea beetle: 473
+- grasshopper: 309
+- green bug: 195
+- grub: 516
+- large cutworm: 294
+- legume blister beetle: 845
+- lytta polita: 392
+- mites: 319
+- mole cricket: 989
+- moth: 397
+- peach borer: 414
+- red spider: 317
+- rice gall midge: 303
+- rice leaf caterpillar: 292
+- rice leaf roller: 669
+- rice leafhopper: 242
+- rice shell pest: 245
+- rice water weevil: 513
+- sawfly: 315
+- slug: 316
+- small brown plant hopper: 331
+- snail: 405
+- stem borer: 474
+- tarnished plant bug: 492
+- wasp: 392
+- weevil: 394
+- wheat blossom midge: 291
+- wheat phloeothrips: 175
+- wheat sawfly: 203
+- white backed plant hopper: 535
+- whitefly: 1081
+- wireworm: 532
+- yellow cutworm: 287
+- yellow rice borer: 302
+Total: 54850
+Robustness checks:
+- Dark images: 491
+- Bright images: 2206
+- Low contrast: 178

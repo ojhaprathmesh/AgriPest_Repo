@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="AgriPest - AI-Powered Pest Detection for Farmers" data-hi="AgriPest - किसानों के लिए AI-संचालित कीट पहचान">AgriPest - AI-Powered Pest Detection for Farmers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#50C878"/>
+                        <path d="M2 17L12 22L22 17" stroke="#50C878" stroke-width="2"/>
+                        <path d="M2 12L12 17L22 12" stroke="#50C878" stroke-width="2"/>
+                        <circle cx="12" cy="7" r="2" fill="#50C878"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>AgriPest</h1>
+                    <p class="logo-subtitle" data-en="AI-Powered Pest Detection for Farmers" data-hi="किसानों के लिए AI-संचालित कीट पहचान">AI-Powered Pest Detection for Farmers</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home" data-en="Home" data-hi="होम">Home</a></li>
+                    <li><a href="#identify" data-en="Identify" data-hi="पहचानें">Identify</a></li>
+                    <li><a href="#gallery" data-en="Gallery" data-hi="गैलरी">Gallery</a></li>
+                    <li><a href="#about" data-en="About" data-hi="के बारे में">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="language-switcher">
+                    <span class="lang-icon">🌐</span>
+                    <button class="lang-btn active" data-lang="en">English</button>
+                    <button class="lang-btn" data-lang="hi">हिंदी</button>
+                </div>
+                <button class="btn-primary start-btn" data-en="Start Identifying →" data-hi="पहचान शुरू करें →">Start Identifying →</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-left">
+                        <div class="badge" data-en="AI-Powered Pest Detection" data-hi="AI-संचालित कीट पहचान">
+                            <span class="star-icon">⭐</span>
+                            <span data-en="AI-Powered Pest Detection" data-hi="AI-संचालित कीट पहचान">AI-Powered Pest Detection</span>
+                        </div>
+                        <h1 class="hero-title">
+                            <span class="title-part-1" data-en="Protect" data-hi="सुरक्षा">Protect</span>
+                            <span class="title-part-2" data-en="Your Crops with" data-hi="अपनी फसलों की">Your Crops with</span>
+                            <span class="title-part-3" data-en="AI Intelligence" data-hi="AI बुद्धिमत्ता">AI Intelligence</span>
+                        </h1>
+                        <p class="hero-description" data-en="Instant pest identification using advanced AI technology. Take a photo and get immediate results to save your harvest." data-hi="उन्नत AI तकनीक का उपयोग करके तत्काल कीट पहचान। एक फोटो लें और अपनी फसल को बचाने के लिए तत्काल परिणाम प्राप्त करें।">Instant pest identification using advanced AI technology. Take a photo and get immediate results to save your harvest.</p>
+                        <div class="hero-buttons">
+                            <button class="btn-primary hero-cta" data-en="Start Identifying →" data-hi="पहचान शुरू करें →">Start Identifying →</button>
+                            <button class="btn-secondary" data-en="Learn More" data-hi="और जानें">Learn More</button>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">99%</span>
+                                <span class="stat-label" data-en="Accuracy" data-hi="सटीकता">Accuracy</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">&lt;3s</span>
+                                <span class="stat-label" data-en="Detection" data-hi="पहचान">Detection</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-en="Free Forever" data-hi="हमेशा मुफ्त">Free Forever</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-right">
+                        <div class="interactive-card">
+                            <div class="card-star">⭐</div>
+                            <div class="card-tabs">
+                                <button class="tab-btn active" style="background: #4A90E2;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </button>
+                                <button class="tab-btn" style="background: #9B59B6;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                        <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+                                    </svg>
+                                </button>
+                                <button class="tab-btn" style="background: #50C878;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="card-content">
+                                <h3 data-en="Instant Detection" data-hi="तत्काल पहचान">Instant Detection</h3>
+                                <div class="detection-info">
+                                    <div class="detection-icon">🐛</div>
+                                    <span data-en="AI-Powered Analysis" data-hi="AI-संचालित विश्लेषण">AI-Powered Analysis</span>
+                                </div>
+                                <div class="confidence-bar">
+                                    <div class="confidence-label" data-en="Confidence" data-hi="विश्वास">Confidence</div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 98%;"></div>
+                                    </div>
+                                    <span class="confidence-value">98%</span>
+                                </div>
+                                <ul class="card-features">
+                                    <li>✓ <span data-en="Real-time pest identification" data-hi="वास्तविक समय कीट पहचान">Real-time pest identification</span></li>
+                                    <li>✓ <span data-en="Expert recommendations" data-hi="विशेषज्ञ सुझाव">Expert recommendations</span></li>
+                                    <li>✓ <span data-en="100% free for farmers" data-hi="किसानों के लिए 100% मुफ्त">100% free for farmers</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Statement Section -->
+        <section class="problem-section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="content-left">
+                        <h2 data-en="Problem Statement" data-hi="समस्या कथन">Problem Statement</h2>
+                        <p data-en="Farmers often struggle to identify whether the insects found on their crops are harmful or not, which leads to delayed pest control measures and reduced yield. Traditional pest identification methods require expert knowledge, time, and manual observation, making them inefficient for large-scale farming." data-hi="किसान अक्सर यह पहचानने में संघर्ष करते हैं कि उनकी फसलों पर पाए जाने वाले कीट हानिकारक हैं या नहीं, जिससे कीट नियंत्रण उपायों में देरी होती है और उपज कम होती है। पारंपरिक कीट पहचान विधियों के लिए विशेषज्ञ ज्ञान, समय और मैनुअल अवलोकन की आवश्यकता होती है, जिससे वे बड़े पैमाने पर खेती के लिए अक्षम हो जाती हैं।">Farmers often struggle to identify whether the insects found on their crops are harmful or not, which leads to delayed pest control measures and reduced yield. Traditional pest identification methods require expert knowledge, time, and manual observation, making them inefficient for large-scale farming.</p>
+                        <ul class="problem-list">
+                            <li>
+                                <span class="problem-icon">✗</span>
+                                <span data-en="Delayed Pest Control" data-hi="देरी से कीट नियंत्रण">Delayed Pest Control</span>
+                            </li>
+                            <li>
+                                <span class="problem-icon">✗</span>
+                                <span data-en="Expert Dependency" data-hi="विशेषज्ञ निर्भरता">Expert Dependency</span>
+                            </li>
+                            <li>
+                                <span class="problem-icon">✗</span>
+                                <span data-en="Reduced Yield" data-hi="कम उपज">Reduced Yield</span>
+                            </li>
+                            <li>
+                                <span class="problem-icon">✗</span>
+                                <span data-en="Inefficient for large-scale farming" data-hi="बड़े पैमाने पर खेती के लिए अक्षम">Inefficient for large-scale farming</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-right">
+                        <div class="field-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Solution Section -->
+        <section class="solution-section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="content-left">
+                        <div class="solution-graphic">
+                            <div class="graphic-shapes">
+                                <div class="shape shape-1"></div>
+                                <div class="shape shape-2"></div>
+                                <div class="shape shape-3"></div>
+                                <div class="shape shape-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="solution-header">
+                            <div class="solution-icon">✓</div>
+                            <h2 data-en="Our Solution" data-hi="हमारा समाधान">Our Solution</h2>
+                        </div>
+                        <p data-en="We developed an AI-based pest identification system that analyzes images of insects and automatically classifies them as harmful or non-harmful for specific crops. This system helps farmers take timely preventive actions, improve crop health, and reduce dependency on expert intervention." data-hi="हमने एक AI-आधारित कीट पहचान प्रणाली विकसित की है जो कीटों की छवियों का विश्लेषण करती है और उन्हें विशिष्ट फसलों के लिए स्वचालित रूप से हानिकारक या गैर-हानिकारक के रूप में वर्गीकृत करती है। यह प्रणाली किसानों को समय पर निवारक कार्रवाई करने, फसल स्वास्थ्य में सुधार करने और विशेषज्ञ हस्तक्षेप पर निर्भरता कम करने में मदद करती है।">We developed an AI-based pest identification system that analyzes images of insects and automatically classifies them as harmful or non-harmful for specific crops. This system helps farmers take timely preventive actions, improve crop health, and reduce dependency on expert intervention.</p>
+                        <ul class="solution-list">
+                            <li>
+                                <span class="solution-icon">✓</span>
+                                <span data-en="Instant AI analysis" data-hi="तत्काल AI विश्लेषण">Instant AI analysis</span>
+                            </li>
+                            <li>
+                                <span class="solution-icon">✓</span>
+                                <span data-en="Automated Classification" data-hi="स्वचालित वर्गीकरण">Automated Classification</span>
+                            </li>
+                            <li>
+                                <span class="solution-icon">✓</span>
+                                <span data-en="Expert Recommendations" data-hi="विशेषज्ञ सुझाव">Expert Recommendations</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works-section">
+            <div class="container">
+                <h2 class="section-title" data-en="How It Works" data-hi="यह कैसे काम करता है">How It Works</h2>
+                <p class="section-subtitle" data-en="Simple three-step process to identify and protect your crops." data-hi="अपनी फसलों की पहचान करने और सुरक्षा करने के लिए सरल तीन-चरणीय प्रक्रिया।">Simple three-step process to identify and protect your crops.</p>
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-icon" style="background: #4A90E2;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3 data-en="Capture Photo" data-hi="फोटो कैप्चर करें">Capture Photo</h3>
+                        <p data-en="Take a clear picture of the insect using your phone camera or upload from gallery." data-hi="अपने फोन कैमरे का उपयोग करके कीट की एक स्पष्ट तस्वीर लें या गैलरी से अपलोड करें।">Take a clear picture of the insect using your phone camera or upload from gallery.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-icon" style="background: #9B59B6;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                <path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/>
+                            </svg>
+                        </div>
+                        <h3 data-en="Model Prediction" data-hi="AI विश्लेषण">Model Prediction</h3>
+                        <p data-en="Our AI model analyzes the image and identifies the insect species instantly." data-hi="हमारा AI मॉडल छवि का विश्लेषण करता है और कीट प्रजातियों की तुरंत पहचान करता है।">Our AI model analyzes the image and identifies the insect species instantly.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-icon" style="background: #50C878;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                        </div>
+                        <h3 data-en="Get Results" data-hi="परिणाम प्राप्त करें">Get Results</h3>
+                        <p data-en="Receive classification and expert recommendations for pest control." data-hi="कीट नियंत्रण के लिए वर्गीकरण और विशेषज्ञ सुझाव प्राप्त करें।">Receive classification and expert recommendations for pest control.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Identify Section -->
+        <section id="identify" class="identify-section">
+            <div class="container">
+                <h2 class="section-title" data-en="Identify" data-hi="पहचानें">Identify</h2>
+                <p class="section-subtitle" data-en="Start identifying insects in your crops now." data-hi="अभी अपनी फसलों में कीटों की पहचान शुरू करें।">Start identifying insects in your crops now.</p>
+                <div class="upload-card">
+                    <h3 data-en="Capture or upload insect Photo" data-hi="कीट फोटो कैप्चर या अपलोड करें">Capture or upload insect Photo</h3>
+                    <p data-en="Take a clear photo of the insect to identify if it's harmful to your crops." data-hi="यह पहचानने के लिए कीट की एक स्पष्ट फोटो लें कि यह आपकी फसलों के लिए हानिकारक है या नहीं।">Take a clear photo of the insect to identify if it's harmful to your crops.</p>
+                    <div class="upload-buttons">
+                        <button class="btn-primary camera-btn" id="cameraBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <span data-en="Open Camera" data-hi="कैमरा खोलें">Open Camera</span>
+                        </button>
+                        <button class="btn-secondary upload-photo-btn" id="uploadPhotoBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#50C878" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            <span data-en="Upload Photo" data-hi="फोटो अपलोड करें">Upload Photo</span>
+                        </button>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <div class="preview-area" id="previewArea" style="display: none;">
+                        <img id="previewImage" src="" alt="Preview">
+                        <button class="btn-primary analyze-btn" data-en="Analyze Insect" data-hi="कीट का विश्लेषण करें">Analyze Insect</button>
+                        <button class="btn-secondary remove-btn" data-en="Remove" data-hi="हटाएं">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="results-section" style="display: none;">
+            <div class="container">
+                <h2 class="section-title" data-en="Identification Results" data-hi="पहचान परिणाम">Identification Results</h2>
+                <div class="result-card">
+                    <div class="result-image">
+                        <img id="resultImage" src="" alt="Insect">
+                    </div>
+                    <div class="result-info">
+                        <h3 id="insectName" data-en="Common Name" data-hi="सामान्य नाम">Common Name</h3>
+                        <p class="scientific-name" id="scientificName" data-en="Scientific Name" data-hi="वैज्ञानिक नाम">Scientific Name</p>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="label" data-en="Family:" data-hi="परिवार:">Family:</span>
+                                <span class="value" id="family">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label" data-en="Habitat:" data-hi="आवास:">Habitat:</span>
+                                <span class="value" id="habitat">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label" data-en="Harmful:" data-hi="हानिकारक:">Harmful:</span>
+                                <span class="value" id="harmful">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label" data-en="Recommendation:" data-hi="सुझाव:">Recommendation:</span>
+                                <span class="value" id="recommendation">-</span>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <h4 data-en="Description" data-hi="विवरण">Description</h4>
+                            <p id="description" data-en="No description available." data-hi="कोई विवरण उपलब्ध नहीं है।">No description available.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Common Insects Section -->
+        <section id="gallery" class="common-insects-section">
+            <div class="container">
+                <h2 class="section-title" data-en="Common Insects In Your Field" data-hi="आपके खेत में सामान्य कीट">Common Insects In Your Field</h2>
+                <p class="section-subtitle" data-en="Learn to recognize these insects and understand their impact." data-hi="इन कीटों को पहचानना सीखें और उनके प्रभाव को समझें।">Learn to recognize these insects and understand their impact.</p>
+                <div class="insects-gallery">
+                    <div class="insect-item">
+                        <div class="insect-image" style="background: linear-gradient(135deg, #50C878 0%, #2E8B57 100%);"></div>
+                        <h4 data-en="Aphid" data-hi="एफिड">Aphid</h4>
+                        <p data-en="Harmful - Feed on plant sap" data-hi="हानिकारक - पौधे के रस पर भोजन करते हैं">Harmful - Feed on plant sap</p>
+                    </div>
+                    <div class="insect-item">
+                        <div class="insect-image" style="background: linear-gradient(135deg, #FF6B6B 0%, #C92A2A 100%);"></div>
+                        <h4 data-en="Ladybug" data-hi="लेडीबग">Ladybug</h4>
+                        <p data-en="Beneficial - Preys on aphids" data-hi="लाभकारी - एफिड पर शिकार करता है">Beneficial - Preys on aphids</p>
+                    </div>
+                    <div class="insect-item">
+                        <div class="insect-image" style="background: linear-gradient(135deg, #4ECDC4 0%, #2C7873 100%);"></div>
+                        <h4 data-en="Caterpillar" data-hi="कैटरपिलर">Caterpillar</h4>
+                        <p data-en="Harmful - Eats plant leaves" data-hi="हानिकारक - पौधे की पत्तियां खाता है">Harmful - Eats plant leaves</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p data-en="&copy; 2024 AgriPest. All rights reserved." data-hi="&copy; 2024 AgriPest। सभी अधिकार सुरक्षित।">&copy; 2024 AgriPest. All rights reserved.</p>
+            <p class="cookie-link" data-en="Manage cookies or opt out" data-hi="कुकीज़ प्रबंधित करें या बाहर निकलें">Manage cookies or opt out</p>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

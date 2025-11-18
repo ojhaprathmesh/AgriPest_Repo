@@ -1,0 +1,22 @@
+data_dir: c:\Users\prath\Downloads\AI_PROJECT\data
+output_dir: processed
+image_size: [256, 256]
+train_ratio: 0.7
+seed: 42
+batch_size: 32
+epochs: 40
+learning_rate: 0.0001
+resnet_variant: resnet50v2
+freeze_backbone: true
+early_stopping_patience: 5
+model_dir: models
+plots_dir: plots
+reports_dir: reports
+logs_dir: logs
+use_dataset_cache: true
+cache_dir: processed/cache
+use_mixed_precision: false
+framework: torch
+num_workers: 4
+amp_dtype: bf16
+min_images_harmful: 175

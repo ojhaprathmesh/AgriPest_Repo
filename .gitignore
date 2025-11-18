@@ -1,0 +1,23 @@
+# path: /.gitignore
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.ipynb_checkpoints
+*.log
+*.pdf
+
+*.env
+*.venv/
+
+processed/
+tests/
+
+*.h5
+*.pth
+!best_model_torch.pth
+!final_model_torch.pth
+
+node_modules/
+.DS_Store
+Thumbs.db
