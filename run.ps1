@@ -1,33 +1,41 @@
 param(
     [int]$FrontendPort = 8000,
-    [int]$BackendPort = 5000
+    [int]$BackendPort = 5000,
+    [string]$Step = "none",
+    [string]$Config = "configs\\pipeline.yaml",
+    [switch]$InstallDeps
 )
 
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $backend = Join-Path $root "backend"
-$frontend = Join-Path $root "dsfm"
-$venv = Join-Path $backend ".venv"
+$frontend = Join-Path $root "web_app"
+$venv = Join-Path $root ".venv"
 
 $pythonCmd = "python"
 if (-not (Get-Command $pythonCmd -ErrorAction SilentlyContinue)) { $pythonCmd = "py" }
-
-if (-not (Test-Path (Join-Path $root "best_efficientnetb0.h5"))) {
-    Write-Host "Warning: best_efficientnetb0.h5 not found in project root." -ForegroundColor Yellow
-}
 
 if (-not (Test-Path $venv)) {
     & $pythonCmd -m venv $venv
 }
 
-$backendPy = Join-Path $venv "Scripts\python.exe"
-& $backendPy -m pip install -r (Join-Path $backend "requirements.txt")
-if ($LASTEXITCODE -ne 0) { throw "Dependency installation failed" }
+$py = Join-Path $venv "Scripts\python.exe"
+if ($InstallDeps) {
+    & $py -m pip install -r (Join-Path $root "requirements.txt")
+    if ($LASTEXITCODE -ne 0) { throw "Dependency installation failed" }
+}
 
-$backendProc = Start-Process -FilePath $backendPy -ArgumentList "app.py" -WorkingDirectory $backend -PassThru
+$bestModel = Join-Path $root "models\best_model_torch.pth"
+$finalModel = Join-Path $root "models\final_model_torch.pth"
+if (-not (Test-Path $bestModel) -and -not (Test-Path $finalModel)) {
+    Write-Host "Warning: trained model not found in models/. Run training before starting backend." -ForegroundColor Yellow
+}
 
-$frontPython = $pythonCmd
-if (-not (Get-Command $frontPython -ErrorAction SilentlyContinue)) { $frontPython = $backendPy }
-$frontendProc = Start-Process -FilePath $frontPython -ArgumentList ("-m http.server {0}" -f $FrontendPort) -WorkingDirectory $frontend -PassThru
+if ($Step -ne "none") {
+    & $py (Join-Path $root "ml\pest_pipeline.py") --step $Step --config $Config
+}
+
+$backendProc = Start-Process -FilePath $py -ArgumentList (Join-Path $backend "app.py") -WorkingDirectory $backend -PassThru
+$frontendProc = Start-Process -FilePath $py -ArgumentList ("-m http.server {0}" -f $FrontendPort) -WorkingDirectory $frontend -PassThru
 
 Start-Process ("http://localhost:{0}" -f $FrontendPort)
 

@@ -1,110 +1,110 @@
 {
   "Adristyrannus": {
-    "precision": 0.6060606060606061,
-    "recall": 0.35714285714285715,
-    "f1-score": 0.449438202247191,
+    "precision": 0.5714285714285714,
+    "recall": 0.5,
+    "f1-score": 0.5333333333333333,
     "support": 56.0
   },
   "Aleurocanthus spiniferus": {
-    "precision": 0.7122302158273381,
-    "recall": 0.7983870967741935,
-    "f1-score": 0.752851711026616,
+    "precision": 0.7846153846153846,
+    "recall": 0.8225806451612904,
+    "f1-score": 0.8031496062992126,
     "support": 124.0
   },
   "Ampelophaga": {
-    "precision": 0.5562913907284768,
-    "recall": 0.6131386861313869,
-    "f1-score": 0.5833333333333334,
+    "precision": 0.6054421768707483,
+    "recall": 0.6496350364963503,
+    "f1-score": 0.6267605633802817,
     "support": 137.0
   },
   "Aphis citricola Vander Goot": {
-    "precision": 0.6944444444444444,
-    "recall": 0.3968253968253968,
-    "f1-score": 0.5050505050505051,
+    "precision": 0.6923076923076923,
+    "recall": 0.42857142857142855,
+    "f1-score": 0.5294117647058824,
     "support": 63.0
   },
   "Apolygus lucorum": {
-    "precision": 0.4230769230769231,
-    "recall": 0.16176470588235295,
-    "f1-score": 0.23404255319148937,
+    "precision": 0.5384615384615384,
+    "recall": 0.20588235294117646,
+    "f1-score": 0.2978723404255319,
     "support": 68.0
   },
   "Bactrocera tsuneonis": {
-    "precision": 0.36363636363636365,
-    "recall": 0.13333333333333333,
-    "f1-score": 0.1951219512195122,
+    "precision": 0.5,
+    "recall": 0.23333333333333334,
+    "f1-score": 0.3181818181818182,
     "support": 30.0
   },
   "Beet spot flies": {
-    "precision": 0.4166666666666667,
-    "recall": 0.46296296296296297,
-    "f1-score": 0.43859649122807015,
+    "precision": 0.42857142857142855,
+    "recall": 0.4444444444444444,
+    "f1-score": 0.43636363636363634,
     "support": 54.0
   },
   "Black hairy": {
-    "precision": 0.9896907216494846,
-    "recall": 0.9696969696969697,
-    "f1-score": 0.9795918367346939,
+    "precision": 0.9705882352941176,
+    "recall": 1.0,
+    "f1-score": 0.9850746268656716,
     "support": 99.0
   },
   "Brevipoalpus lewisi McGregor": {
-    "precision": 0.8571428571428571,
-    "recall": 0.42857142857142855,
-    "f1-score": 0.5714285714285714,
+    "precision": 0.6363636363636364,
+    "recall": 0.5,
+    "f1-score": 0.56,
     "support": 14.0
   },
   "Ceroplastes rubens": {
-    "precision": 0.6739130434782609,
-    "recall": 0.6739130434782609,
-    "f1-score": 0.6739130434782609,
+    "precision": 0.7073170731707317,
+    "recall": 0.6304347826086957,
+    "f1-score": 0.6666666666666666,
     "support": 46.0
   },
   "Chlumetia transversa": {
-    "precision": 0.5,
-    "recall": 0.21818181818181817,
-    "f1-score": 0.3037974683544304,
+    "precision": 0.625,
+    "recall": 0.2727272727272727,
+    "f1-score": 0.379746835443038,
     "support": 55.0
   },
   "Chrysomphalus aonidum": {
-    "precision": 0.4716981132075472,
+    "precision": 0.5319148936170213,
     "recall": 0.625,
-    "f1-score": 0.5376344086021505,
+    "f1-score": 0.5747126436781609,
     "support": 40.0
   },
   "Cicadella viridis": {
-    "precision": 0.726775956284153,
-    "recall": 0.5782608695652174,
-    "f1-score": 0.6440677966101694,
+    "precision": 0.7837837837837838,
+    "recall": 0.6304347826086957,
+    "f1-score": 0.6987951807228916,
     "support": 230.0
   },
   "Cicadellidae": {
-    "precision": 0.7060260586319218,
-    "recall": 0.8393030009680542,
-    "f1-score": 0.7669172932330827,
+    "precision": 0.7187244480784954,
+    "recall": 0.850919651500484,
+    "f1-score": 0.7792553191489362,
     "support": 1033.0
   },
   "Colomerus vitis": {
-    "precision": 0.4,
-    "recall": 0.3870967741935484,
-    "f1-score": 0.39344262295081966,
+    "precision": 0.48148148148148145,
+    "recall": 0.41935483870967744,
+    "f1-score": 0.4482758620689655,
     "support": 31.0
   },
   "Dacus dorsalis(Hendel)": {
-    "precision": 0.5571428571428572,
-    "recall": 0.4936708860759494,
-    "f1-score": 0.5234899328859061,
+    "precision": 0.5584415584415584,
+    "recall": 0.5443037974683544,
+    "f1-score": 0.5512820512820513,
     "support": 79.0
   },
   "Dasineura sp": {
-    "precision": 0.3582089552238806,
-    "recall": 0.26373626373626374,
-    "f1-score": 0.3037974683544304,
+    "precision": 0.3333333333333333,
+    "recall": 0.24175824175824176,
+    "f1-score": 0.2802547770700637,
     "support": 91.0
   },
   "Deporaus marginatus Pascoe": {
-    "precision": 0.6086956521739131,
-    "recall": 0.3684210526315789,
-    "f1-score": 0.45901639344262296,
+    "precision": 0.75,
+    "recall": 0.3157894736842105,
+    "f1-score": 0.4444444444444444,
     "support": 38.0
   },
   "Erythroneura apicalis": {
@@ -114,63 +114,63 @@
     "support": 13.0
   },
   "Field Cricket": {
-    "precision": 0.921875,
-    "recall": 0.7866666666666666,
-    "f1-score": 0.8489208633093526,
+    "precision": 0.9117647058823529,
+    "recall": 0.8266666666666667,
+    "f1-score": 0.8671328671328671,
     "support": 75.0
   },
   "Fruit piercing moth": {
-    "precision": 0.5703125,
+    "precision": 0.6347826086956522,
     "recall": 0.6517857142857143,
-    "f1-score": 0.6083333333333333,
+    "f1-score": 0.6431718061674009,
     "support": 112.0
   },
   "Gall fly": {
-    "precision": 0.625,
-    "recall": 0.5782312925170068,
-    "f1-score": 0.6007067137809188,
+    "precision": 0.610738255033557,
+    "recall": 0.6190476190476191,
+    "f1-score": 0.6148648648648649,
     "support": 147.0
   },
   "Icerya purchasi Maskell": {
-    "precision": 0.6691729323308271,
+    "precision": 0.6793893129770993,
     "recall": 0.6846153846153846,
-    "f1-score": 0.6768060836501901,
+    "f1-score": 0.6819923371647509,
     "support": 130.0
   },
   "Indigo caterpillar": {
-    "precision": 0.9517241379310345,
+    "precision": 0.9583333333333334,
     "recall": 0.9928057553956835,
-    "f1-score": 0.971830985915493,
+    "f1-score": 0.9752650176678446,
     "support": 139.0
   },
   "Jute Stem Weevil": {
-    "precision": 0.9814814814814815,
-    "recall": 0.9814814814814815,
-    "f1-score": 0.9814814814814815,
+    "precision": 0.963963963963964,
+    "recall": 0.9907407407407407,
+    "f1-score": 0.9771689497716894,
     "support": 108.0
   },
   "Jute aphid": {
-    "precision": 0.8615384615384616,
-    "recall": 0.9655172413793104,
-    "f1-score": 0.9105691056910569,
+    "precision": 0.875968992248062,
+    "recall": 0.9741379310344828,
+    "f1-score": 0.9224489795918367,
     "support": 116.0
   },
   "Jute hairy": {
-    "precision": 0.5666666666666667,
-    "recall": 0.9224806201550387,
-    "f1-score": 0.7020648967551623,
+    "precision": 0.5858585858585859,
+    "recall": 0.8992248062015504,
+    "f1-score": 0.709480122324159,
     "support": 129.0
   },
   "Jute red mite": {
-    "precision": 0.9444444444444444,
-    "recall": 0.9807692307692307,
-    "f1-score": 0.9622641509433962,
+    "precision": 0.9619047619047619,
+    "recall": 0.9711538461538461,
+    "f1-score": 0.9665071770334929,
     "support": 104.0
   },
   "Jute semilooper": {
-    "precision": 0.9739130434782609,
+    "precision": 0.9572649572649573,
     "recall": 0.9572649572649573,
-    "f1-score": 0.9655172413793104,
+    "f1-score": 0.9572649572649573,
     "support": 117.0
   },
   "Jute stem girdler": {
@@ -180,21 +180,21 @@
     "support": 90.0
   },
   "Jute stick insect": {
-    "precision": 0.9809523809523809,
-    "recall": 1.0,
-    "f1-score": 0.9903846153846154,
+    "precision": 0.9902912621359223,
+    "recall": 0.9902912621359223,
+    "f1-score": 0.9902912621359223,
     "support": 103.0
   },
   "Lawana imitata Melichar": {
-    "precision": 0.6847826086956522,
-    "recall": 0.6057692307692307,
-    "f1-score": 0.6428571428571429,
+    "precision": 0.66,
+    "recall": 0.6346153846153846,
+    "f1-score": 0.6470588235294118,
     "support": 104.0
   },
   "Leaf beetle": {
-    "precision": 0.9306930693069307,
-    "recall": 0.9894736842105263,
-    "f1-score": 0.9591836734693877,
+    "precision": 0.9693877551020408,
+    "recall": 1.0,
+    "f1-score": 0.9844559585492227,
     "support": 95.0
   },
   "Limacodidae": {
@@ -204,21 +204,21 @@
     "support": 252.0
   },
   "Locust": {
-    "precision": 0.5714285714285714,
-    "recall": 0.40404040404040403,
-    "f1-score": 0.47337278106508873,
+    "precision": 0.5584415584415584,
+    "recall": 0.43434343434343436,
+    "f1-score": 0.48863636363636365,
     "support": 99.0
   },
   "Locustoidea": {
-    "precision": 0.6643598615916955,
-    "recall": 0.7649402390438247,
-    "f1-score": 0.7111111111111111,
+    "precision": 0.7222222222222222,
+    "recall": 0.7250996015936255,
+    "f1-score": 0.7236580516898609,
     "support": 251.0
   },
   "Lycorma delicatula": {
-    "precision": 0.6809238665526091,
-    "recall": 0.8326359832635983,
-    "f1-score": 0.7491764705882353,
+    "precision": 0.7018800358102059,
+    "recall": 0.8200836820083682,
+    "f1-score": 0.7563917028461168,
     "support": 956.0
   },
   "Mango flat beak leafhopper": {
@@ -234,105 +234,105 @@
     "support": 107.0
   },
   "Miridae": {
-    "precision": 0.5960629921259842,
-    "recall": 0.8282275711159738,
-    "f1-score": 0.6932234432234432,
+    "precision": 0.5823353293413174,
+    "recall": 0.8512035010940919,
+    "f1-score": 0.6915555555555556,
     "support": 914.0
   },
   "Nipaecoccus vastalor": {
-    "precision": 1.0,
-    "recall": 0.05555555555555555,
-    "f1-score": 0.10526315789473684,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
     "support": 18.0
   },
   "Panonchus citri McGregor": {
-    "precision": 0.6710526315789473,
-    "recall": 0.7391304347826086,
-    "f1-score": 0.7034482758620689,
+    "precision": 0.7105263157894737,
+    "recall": 0.782608695652174,
+    "f1-score": 0.7448275862068966,
     "support": 69.0
   },
   "Papilio xuthus": {
-    "precision": 0.8076923076923077,
-    "recall": 0.7777777777777778,
-    "f1-score": 0.7924528301886793,
+    "precision": 0.8311688311688312,
+    "recall": 0.7901234567901234,
+    "f1-score": 0.810126582278481,
     "support": 81.0
   },
   "Parlatoria zizyphus Lucus": {
-    "precision": 1.0,
+    "precision": 0.625,
     "recall": 0.38461538461538464,
-    "f1-score": 0.5555555555555556,
+    "f1-score": 0.47619047619047616,
     "support": 13.0
   },
   "Phyllocnistis citrella Stainton": {
-    "precision": 0.6727272727272727,
-    "recall": 0.5068493150684932,
-    "f1-score": 0.578125,
+    "precision": 0.639344262295082,
+    "recall": 0.5342465753424658,
+    "f1-score": 0.582089552238806,
     "support": 73.0
   },
   "Phyllocoptes oleiverus ashmead": {
-    "precision": 0.4523809523809524,
-    "recall": 0.6129032258064516,
-    "f1-score": 0.5205479452054794,
+    "precision": 0.6052631578947368,
+    "recall": 0.7419354838709677,
+    "f1-score": 0.6666666666666666,
     "support": 31.0
   },
   "Pieris canidia": {
-    "precision": 0.9404761904761905,
-    "recall": 0.9404761904761905,
-    "f1-score": 0.9404761904761905,
+    "precision": 0.9411764705882353,
+    "recall": 0.9523809523809523,
+    "f1-score": 0.9467455621301775,
     "support": 84.0
   },
   "Pod borer": {
-    "precision": 0.916030534351145,
-    "recall": 0.9917355371900827,
-    "f1-score": 0.9523809523809523,
+    "precision": 0.9453125,
+    "recall": 1.0,
+    "f1-score": 0.9718875502008032,
     "support": 121.0
   },
   "Polyphagotars onemus latus": {
-    "precision": 0.5,
-    "recall": 0.06666666666666667,
-    "f1-score": 0.11764705882352941,
+    "precision": 1.0,
+    "recall": 0.2,
+    "f1-score": 0.3333333333333333,
     "support": 15.0
   },
   "Potosiabre vitarsis": {
-    "precision": 0.7790055248618785,
-    "recall": 0.8294117647058824,
-    "f1-score": 0.8034188034188035,
+    "precision": 0.8313253012048193,
+    "recall": 0.8117647058823529,
+    "f1-score": 0.8214285714285714,
     "support": 170.0
   },
   "Prodenia litura": {
-    "precision": 0.5037878787878788,
-    "recall": 0.5659574468085107,
-    "f1-score": 0.533066132264529,
+    "precision": 0.5057915057915058,
+    "recall": 0.5574468085106383,
+    "f1-score": 0.5303643724696356,
     "support": 235.0
   },
   "Pseudococcus comstocki Kuwana": {
-    "precision": 0.6153846153846154,
-    "recall": 0.2909090909090909,
-    "f1-score": 0.3950617283950617,
+    "precision": 0.625,
+    "recall": 0.36363636363636365,
+    "f1-score": 0.45977011494252873,
     "support": 55.0
   },
   "Rhytidodera bowrinii white": {
-    "precision": 0.6865671641791045,
-    "recall": 0.46,
-    "f1-score": 0.5508982035928144,
+    "precision": 0.7377049180327869,
+    "recall": 0.45,
+    "f1-score": 0.5590062111801242,
     "support": 100.0
   },
   "Rice Stemfly": {
-    "precision": 0.4423076923076923,
-    "recall": 0.3484848484848485,
-    "f1-score": 0.3898305084745763,
+    "precision": 0.44642857142857145,
+    "recall": 0.3787878787878788,
+    "f1-score": 0.4098360655737705,
     "support": 66.0
   },
   "Salurnis marginella Guerr": {
-    "precision": 0.6615384615384615,
-    "recall": 0.48863636363636365,
-    "f1-score": 0.5620915032679739,
+    "precision": 0.6619718309859155,
+    "recall": 0.5340909090909091,
+    "f1-score": 0.5911949685534591,
     "support": 88.0
   },
   "Scirtothrips dorsalis Hood": {
-    "precision": 0.4725274725274725,
-    "recall": 0.593103448275862,
-    "f1-score": 0.5259938837920489,
+    "precision": 0.4656084656084656,
+    "recall": 0.6068965517241379,
+    "f1-score": 0.5269461077844312,
     "support": 145.0
   },
   "Spilosoma Obliqua": {
@@ -342,297 +342,297 @@
     "support": 75.0
   },
   "Sternochetus frigidus": {
-    "precision": 0.6296296296296297,
-    "recall": 0.4146341463414634,
-    "f1-score": 0.5,
+    "precision": 0.660377358490566,
+    "recall": 0.4268292682926829,
+    "f1-score": 0.5185185185185185,
     "support": 82.0
   },
   "Termite": {
-    "precision": 0.9607843137254902,
-    "recall": 0.98989898989899,
-    "f1-score": 0.9751243781094527,
+    "precision": 0.99,
+    "recall": 1.0,
+    "f1-score": 0.9949748743718593,
     "support": 99.0
   },
   "Termite odontotermes (Rambur)": {
-    "precision": 0.9469026548672567,
-    "recall": 0.9907407407407407,
-    "f1-score": 0.9683257918552036,
+    "precision": 0.9724770642201835,
+    "recall": 0.9814814814814815,
+    "f1-score": 0.9769585253456221,
     "support": 108.0
   },
   "Tetradacus c Bactrocera minax": {
-    "precision": 0.5616438356164384,
-    "recall": 0.5857142857142857,
-    "f1-score": 0.5734265734265734,
+    "precision": 0.589041095890411,
+    "recall": 0.6142857142857143,
+    "f1-score": 0.6013986013986014,
     "support": 70.0
   },
   "Thrips": {
-    "precision": 0.25252525252525254,
-    "recall": 0.15822784810126583,
-    "f1-score": 0.19455252918287938,
+    "precision": 0.24786324786324787,
+    "recall": 0.18354430379746836,
+    "f1-score": 0.2109090909090909,
     "support": 158.0
   },
   "Toxoptera aurantii": {
-    "precision": 0.875,
-    "recall": 0.175,
-    "f1-score": 0.2916666666666667,
+    "precision": 0.782608695652174,
+    "recall": 0.45,
+    "f1-score": 0.5714285714285714,
     "support": 40.0
   },
   "Toxoptera citricidus": {
-    "precision": 0.375,
+    "precision": 0.5,
     "recall": 0.08823529411764706,
-    "f1-score": 0.14285714285714285,
+    "f1-score": 0.15,
     "support": 34.0
   },
   "Trialeurodes vaporariorum": {
-    "precision": 0.4782608695652174,
-    "recall": 0.3548387096774194,
-    "f1-score": 0.4074074074074074,
+    "precision": 0.44954128440366975,
+    "recall": 0.3951612903225806,
+    "f1-score": 0.4206008583690987,
     "support": 124.0
   },
   "Unaspis yanonensis": {
-    "precision": 0.589041095890411,
-    "recall": 0.5733333333333334,
-    "f1-score": 0.581081081081081,
+    "precision": 0.6333333333333333,
+    "recall": 0.5066666666666667,
+    "f1-score": 0.562962962962963,
     "support": 75.0
   },
   "Viteus vitifoliae": {
-    "precision": 0.4523809523809524,
-    "recall": 0.296875,
-    "f1-score": 0.3584905660377358,
+    "precision": 0.484375,
+    "recall": 0.484375,
+    "f1-score": 0.484375,
     "support": 64.0
   },
   "Xylotrechus": {
-    "precision": 0.7333333333333333,
-    "recall": 0.6376811594202898,
-    "f1-score": 0.6821705426356589,
+    "precision": 0.7359550561797753,
+    "recall": 0.6328502415458938,
+    "f1-score": 0.6805194805194805,
     "support": 207.0
   },
   "Yellow Mite": {
-    "precision": 0.9178082191780822,
-    "recall": 0.8933333333333333,
-    "f1-score": 0.9054054054054054,
+    "precision": 0.972972972972973,
+    "recall": 0.96,
+    "f1-score": 0.9664429530201343,
     "support": 75.0
   },
   "alfalfa plant bug": {
-    "precision": 0.40625,
-    "recall": 0.11016949152542373,
-    "f1-score": 0.17333333333333334,
+    "precision": 0.42857142857142855,
+    "recall": 0.1271186440677966,
+    "f1-score": 0.19607843137254902,
     "support": 118.0
   },
   "alfalfa seed chalcid": {
-    "precision": 0.14285714285714285,
+    "precision": 0.3333333333333333,
     "recall": 0.030303030303030304,
-    "f1-score": 0.05,
+    "f1-score": 0.05555555555555555,
     "support": 33.0
   },
   "alfalfa weevil": {
-    "precision": 0.5111111111111111,
-    "recall": 0.24468085106382978,
-    "f1-score": 0.33093525179856115,
+    "precision": 0.52,
+    "recall": 0.2765957446808511,
+    "f1-score": 0.3611111111111111,
     "support": 94.0
   },
   "aphids": {
-    "precision": 0.5173824130879345,
-    "recall": 0.6865671641791045,
-    "f1-score": 0.5900874635568513,
+    "precision": 0.5241521068859198,
+    "recall": 0.6919945725915875,
+    "f1-score": 0.5964912280701754,
     "support": 737.0
   },
   "army worm": {
-    "precision": 0.3140495867768595,
-    "recall": 0.3958333333333333,
-    "f1-score": 0.35023041474654376,
+    "precision": 0.3719806763285024,
+    "recall": 0.4010416666666667,
+    "f1-score": 0.38596491228070173,
     "support": 192.0
   },
   "asiatic rice borer": {
-    "precision": 0.36792452830188677,
-    "recall": 0.4126984126984127,
-    "f1-score": 0.38902743142144636,
+    "precision": 0.37280701754385964,
+    "recall": 0.4497354497354497,
+    "f1-score": 0.407673860911271,
     "support": 189.0
   },
   "beet army worm": {
-    "precision": 0.37919463087248323,
-    "recall": 0.39100346020761245,
-    "f1-score": 0.3850085178875639,
+    "precision": 0.411371237458194,
+    "recall": 0.42560553633217996,
+    "f1-score": 0.41836734693877553,
     "support": 289.0
   },
   "beet fly": {
-    "precision": 0.2857142857142857,
-    "recall": 0.10526315789473684,
-    "f1-score": 0.15384615384615385,
+    "precision": 0.3,
+    "recall": 0.15789473684210525,
+    "f1-score": 0.20689655172413793,
     "support": 19.0
   },
   "beet weevil": {
-    "precision": 0.48148148148148145,
+    "precision": 0.4482758620689655,
     "recall": 0.23636363636363636,
-    "f1-score": 0.3170731707317073,
+    "f1-score": 0.30952380952380953,
     "support": 55.0
   },
   "beetle": {
-    "precision": 0.7904761904761904,
-    "recall": 0.8829787234042553,
-    "f1-score": 0.8341708542713567,
+    "precision": 0.8,
+    "recall": 0.9361702127659575,
+    "f1-score": 0.8627450980392157,
     "support": 94.0
   },
   "bird cherry-oataphid": {
-    "precision": 0.330188679245283,
-    "recall": 0.2755905511811024,
-    "f1-score": 0.30042918454935624,
+    "precision": 0.34444444444444444,
+    "recall": 0.2440944881889764,
+    "f1-score": 0.2857142857142857,
     "support": 127.0
   },
   "black cutworm": {
-    "precision": 0.3776824034334764,
-    "recall": 0.5714285714285714,
-    "f1-score": 0.45478036175710596,
+    "precision": 0.3545816733067729,
+    "recall": 0.577922077922078,
+    "f1-score": 0.43950617283950616,
     "support": 154.0
   },
   "blister beetle": {
-    "precision": 0.5734463276836158,
-    "recall": 0.5953079178885631,
-    "f1-score": 0.5841726618705037,
+    "precision": 0.5828571428571429,
+    "recall": 0.5982404692082112,
+    "f1-score": 0.5904486251808972,
     "support": 341.0
   },
   "bollworm": {
-    "precision": 0.7333333333333333,
-    "recall": 0.7021276595744681,
-    "f1-score": 0.717391304347826,
+    "precision": 0.8172043010752689,
+    "recall": 0.8085106382978723,
+    "f1-score": 0.8128342245989305,
     "support": 94.0
   },
   "brown plant hopper": {
-    "precision": 0.4146341463414634,
-    "recall": 0.4533333333333333,
-    "f1-score": 0.43312101910828027,
+    "precision": 0.38414634146341464,
+    "recall": 0.42,
+    "f1-score": 0.4012738853503185,
     "support": 150.0
   },
   "cabbage army worm": {
-    "precision": 0.36486486486486486,
+    "precision": 0.3698630136986301,
     "recall": 0.17532467532467533,
-    "f1-score": 0.23684210526315788,
+    "f1-score": 0.23788546255506607,
     "support": 154.0
   },
   "cerodonta denticornis": {
-    "precision": 0.5,
-    "recall": 0.32,
-    "f1-score": 0.3902439024390244,
+    "precision": 0.5882352941176471,
+    "recall": 0.4,
+    "f1-score": 0.47619047619047616,
     "support": 25.0
   },
   "corn borer": {
-    "precision": 0.4213709677419355,
-    "recall": 0.6852459016393443,
-    "f1-score": 0.5218476903870163,
+    "precision": 0.4376321353065539,
+    "recall": 0.6786885245901639,
+    "f1-score": 0.532133676092545,
     "support": 305.0
   },
   "corn earworm": {
-    "precision": 0.6538461538461539,
+    "precision": 0.7727272727272727,
     "recall": 0.4594594594594595,
-    "f1-score": 0.5396825396825397,
+    "f1-score": 0.576271186440678,
     "support": 37.0
   },
   "cutworm": {
-    "precision": 0.34782608695652173,
-    "recall": 0.17777777777777778,
-    "f1-score": 0.23529411764705882,
+    "precision": 0.28,
+    "recall": 0.15555555555555556,
+    "f1-score": 0.2,
     "support": 45.0
   },
   "earwig": {
-    "precision": 0.78125,
-    "recall": 0.6410256410256411,
-    "f1-score": 0.704225352112676,
+    "precision": 0.7407407407407407,
+    "recall": 0.6837606837606838,
+    "f1-score": 0.7111111111111111,
     "support": 117.0
   },
   "english grain aphid": {
-    "precision": 0.3333333333333333,
-    "recall": 0.15254237288135594,
-    "f1-score": 0.20930232558139536,
+    "precision": 0.34782608695652173,
+    "recall": 0.2033898305084746,
+    "f1-score": 0.25668449197860965,
     "support": 118.0
   },
   "fall armyworm": {
-    "precision": 0.6111111111111112,
-    "recall": 0.275,
-    "f1-score": 0.3793103448275862,
+    "precision": 0.38461538461538464,
+    "recall": 0.25,
+    "f1-score": 0.30303030303030304,
     "support": 40.0
   },
   "flax budworm": {
-    "precision": 0.2809917355371901,
-    "recall": 0.17708333333333334,
-    "f1-score": 0.21725239616613418,
+    "precision": 0.3089430894308943,
+    "recall": 0.19791666666666666,
+    "f1-score": 0.24126984126984127,
     "support": 192.0
   },
   "flea beetle": {
-    "precision": 0.7542372881355932,
-    "recall": 0.6267605633802817,
-    "f1-score": 0.6846153846153846,
+    "precision": 0.7175572519083969,
+    "recall": 0.6619718309859155,
+    "f1-score": 0.6886446886446886,
     "support": 142.0
   },
   "grain spreader thrips": {
-    "precision": 0.42857142857142855,
+    "precision": 0.5454545454545454,
     "recall": 0.3870967741935484,
-    "f1-score": 0.4067796610169492,
+    "f1-score": 0.4528301886792453,
     "support": 31.0
   },
   "grasshopper": {
-    "precision": 0.7211538461538461,
-    "recall": 0.8064516129032258,
-    "f1-score": 0.7614213197969543,
+    "precision": 0.7798165137614679,
+    "recall": 0.9139784946236559,
+    "f1-score": 0.8415841584158416,
     "support": 93.0
   },
   "green bug": {
-    "precision": 0.2777777777777778,
-    "recall": 0.08620689655172414,
-    "f1-score": 0.13157894736842105,
+    "precision": 0.2857142857142857,
+    "recall": 0.13793103448275862,
+    "f1-score": 0.18604651162790697,
     "support": 58.0
   },
   "grub": {
-    "precision": 0.7100591715976331,
-    "recall": 0.7741935483870968,
-    "f1-score": 0.7407407407407407,
+    "precision": 0.7380952380952381,
+    "recall": 0.8,
+    "f1-score": 0.7678018575851393,
     "support": 155.0
   },
   "large cutworm": {
-    "precision": 0.15384615384615385,
-    "recall": 0.045454545454545456,
-    "f1-score": 0.07017543859649122,
+    "precision": 0.125,
+    "recall": 0.03409090909090909,
+    "f1-score": 0.05357142857142857,
     "support": 88.0
   },
   "legume blister beetle": {
-    "precision": 0.6398467432950191,
-    "recall": 0.65748031496063,
-    "f1-score": 0.6485436893203883,
+    "precision": 0.688034188034188,
+    "recall": 0.6338582677165354,
+    "f1-score": 0.6598360655737705,
     "support": 254.0
   },
   "longlegged spider mite": {
-    "precision": 0.3793103448275862,
-    "recall": 0.25,
-    "f1-score": 0.3013698630136986,
+    "precision": 0.46875,
+    "recall": 0.3409090909090909,
+    "f1-score": 0.39473684210526316,
     "support": 44.0
   },
   "lytta polita": {
-    "precision": 0.7586206896551724,
-    "recall": 0.3728813559322034,
-    "f1-score": 0.5,
+    "precision": 0.6707317073170732,
+    "recall": 0.4661016949152542,
+    "f1-score": 0.55,
     "support": 118.0
   },
   "meadow moth": {
-    "precision": 0.84,
-    "recall": 0.42857142857142855,
-    "f1-score": 0.5675675675675675,
+    "precision": 0.8846153846153846,
+    "recall": 0.46938775510204084,
+    "f1-score": 0.6133333333333333,
     "support": 49.0
   },
   "mites": {
-    "precision": 0.7982456140350878,
-    "recall": 0.9479166666666666,
-    "f1-score": 0.8666666666666667,
+    "precision": 0.811965811965812,
+    "recall": 0.9895833333333334,
+    "f1-score": 0.892018779342723,
     "support": 96.0
   },
   "mole cricket": {
-    "precision": 0.8466453674121406,
-    "recall": 0.8922558922558923,
-    "f1-score": 0.8688524590163934,
+    "precision": 0.8292682926829268,
+    "recall": 0.9158249158249159,
+    "f1-score": 0.8704,
     "support": 297.0
   },
   "moth": {
-    "precision": 0.5777777777777777,
-    "recall": 0.6554621848739496,
-    "f1-score": 0.6141732283464567,
+    "precision": 0.640625,
+    "recall": 0.6890756302521008,
+    "f1-score": 0.6639676113360324,
     "support": 119.0
   },
   "odontothrips loti": {
@@ -642,111 +642,111 @@
     "support": 32.0
   },
   "oides decempunctata": {
-    "precision": 0.8431372549019608,
+    "precision": 0.8958333333333334,
     "recall": 0.8431372549019608,
-    "f1-score": 0.8431372549019608,
+    "f1-score": 0.8686868686868687,
     "support": 51.0
   },
   "paddy stem maggot": {
-    "precision": 0.26666666666666666,
-    "recall": 0.0851063829787234,
-    "f1-score": 0.12903225806451613,
+    "precision": 0.3181818181818182,
+    "recall": 0.14893617021276595,
+    "f1-score": 0.2028985507246377,
     "support": 47.0
   },
   "parathrene regalis": {
-    "precision": 0.16666666666666666,
-    "recall": 0.04,
-    "f1-score": 0.06451612903225806,
+    "precision": 0.46153846153846156,
+    "recall": 0.24,
+    "f1-score": 0.3157894736842105,
     "support": 25.0
   },
   "peach borer": {
-    "precision": 0.7282608695652174,
-    "recall": 0.5403225806451613,
-    "f1-score": 0.6203703703703703,
+    "precision": 0.7272727272727273,
+    "recall": 0.5161290322580645,
+    "f1-score": 0.6037735849056604,
     "support": 124.0
   },
   "penthaleus major": {
-    "precision": 0.6666666666666666,
-    "recall": 0.42857142857142855,
-    "f1-score": 0.5217391304347826,
+    "precision": 0.68,
+    "recall": 0.40476190476190477,
+    "f1-score": 0.5074626865671642,
     "support": 42.0
   },
   "red spider": {
-    "precision": 0.5757575757575758,
-    "recall": 0.4,
-    "f1-score": 0.4720496894409938,
+    "precision": 0.6610169491525424,
+    "recall": 0.4105263157894737,
+    "f1-score": 0.5064935064935064,
     "support": 95.0
   },
   "rice gall midge": {
-    "precision": 0.5444444444444444,
-    "recall": 0.5384615384615384,
-    "f1-score": 0.5414364640883977,
+    "precision": 0.5045871559633027,
+    "recall": 0.6043956043956044,
+    "f1-score": 0.55,
     "support": 91.0
   },
   "rice leaf caterpillar": {
-    "precision": 0.35294117647058826,
-    "recall": 0.13636363636363635,
-    "f1-score": 0.19672131147540983,
+    "precision": 0.3170731707317073,
+    "recall": 0.14772727272727273,
+    "f1-score": 0.20155038759689922,
     "support": 88.0
   },
   "rice leaf roller": {
-    "precision": 0.4875,
-    "recall": 0.7761194029850746,
-    "f1-score": 0.5988483685220729,
+    "precision": 0.5622641509433962,
+    "recall": 0.7412935323383084,
+    "f1-score": 0.6394849785407726,
     "support": 201.0
   },
   "rice leafhopper": {
-    "precision": 0.44642857142857145,
-    "recall": 0.3424657534246575,
-    "f1-score": 0.3875968992248062,
+    "precision": 0.5283018867924528,
+    "recall": 0.3835616438356164,
+    "f1-score": 0.4444444444444444,
     "support": 73.0
   },
   "rice shell pest": {
-    "precision": 0.5416666666666666,
-    "recall": 0.3561643835616438,
-    "f1-score": 0.4297520661157025,
+    "precision": 0.5087719298245614,
+    "recall": 0.3972602739726027,
+    "f1-score": 0.4461538461538462,
     "support": 73.0
   },
   "rice water weevil": {
-    "precision": 0.5733333333333334,
-    "recall": 0.5584415584415584,
-    "f1-score": 0.5657894736842105,
+    "precision": 0.5923566878980892,
+    "recall": 0.6038961038961039,
+    "f1-score": 0.5980707395498392,
     "support": 154.0
   },
   "sawfly": {
-    "precision": 0.7378640776699029,
-    "recall": 0.8085106382978723,
-    "f1-score": 0.7715736040609137,
+    "precision": 0.8191489361702128,
+    "recall": 0.8191489361702128,
+    "f1-score": 0.8191489361702128,
     "support": 94.0
   },
   "sericaorient alismots chulsky": {
-    "precision": 0.6086956521739131,
-    "recall": 0.4117647058823529,
-    "f1-score": 0.49122807017543857,
+    "precision": 0.75,
+    "recall": 0.4411764705882353,
+    "f1-score": 0.5555555555555556,
     "support": 34.0
   },
   "slug": {
-    "precision": 0.7954545454545454,
-    "recall": 0.7368421052631579,
-    "f1-score": 0.7650273224043715,
+    "precision": 0.8152173913043478,
+    "recall": 0.7894736842105263,
+    "f1-score": 0.8021390374331551,
     "support": 95.0
   },
   "small brown plant hopper": {
-    "precision": 0.44642857142857145,
-    "recall": 0.25252525252525254,
-    "f1-score": 0.3225806451612903,
+    "precision": 0.36486486486486486,
+    "recall": 0.2727272727272727,
+    "f1-score": 0.31213872832369943,
     "support": 99.0
   },
   "snail": {
-    "precision": 0.9029850746268657,
+    "precision": 0.9097744360902256,
     "recall": 1.0,
-    "f1-score": 0.9490196078431372,
+    "f1-score": 0.952755905511811,
     "support": 121.0
   },
   "stem borer": {
-    "precision": 0.2727272727272727,
-    "recall": 0.19014084507042253,
-    "f1-score": 0.22406639004149378,
+    "precision": 0.27522935779816515,
+    "recall": 0.2112676056338028,
+    "f1-score": 0.23904382470119523,
     "support": 142.0
   },
   "stem_borer": {
@@ -756,9 +756,9 @@
     "support": 11.0
   },
   "tarnished plant bug": {
-    "precision": 0.4225352112676056,
-    "recall": 0.20270270270270271,
-    "f1-score": 0.273972602739726,
+    "precision": 0.40298507462686567,
+    "recall": 0.18243243243243243,
+    "f1-score": 0.25116279069767444,
     "support": 148.0
   },
   "therioaphis maculata Buckton": {
@@ -768,82 +768,82 @@
     "support": 47.0
   },
   "wasp": {
-    "precision": 0.8409090909090909,
-    "recall": 0.940677966101695,
-    "f1-score": 0.888,
+    "precision": 0.873015873015873,
+    "recall": 0.9322033898305084,
+    "f1-score": 0.9016393442622951,
     "support": 118.0
   },
   "weevil": {
-    "precision": 0.7142857142857143,
-    "recall": 0.9322033898305084,
-    "f1-score": 0.8088235294117647,
+    "precision": 0.7655172413793103,
+    "recall": 0.940677966101695,
+    "f1-score": 0.844106463878327,
     "support": 118.0
   },
   "wheat blossom midge": {
-    "precision": 0.6024096385542169,
-    "recall": 0.5747126436781609,
-    "f1-score": 0.5882352941176471,
+    "precision": 0.6875,
+    "recall": 0.632183908045977,
+    "f1-score": 0.6586826347305389,
     "support": 87.0
   },
   "wheat phloeothrips": {
-    "precision": 0.38235294117647056,
-    "recall": 0.25,
-    "f1-score": 0.3023255813953488,
+    "precision": 0.5,
+    "recall": 0.38461538461538464,
+    "f1-score": 0.43478260869565216,
     "support": 52.0
   },
   "wheat sawfly": {
-    "precision": 0.8695652173913043,
-    "recall": 0.32786885245901637,
-    "f1-score": 0.47619047619047616,
+    "precision": 0.7297297297297297,
+    "recall": 0.4426229508196721,
+    "f1-score": 0.5510204081632653,
     "support": 61.0
   },
   "white backed plant hopper": {
-    "precision": 0.3131868131868132,
-    "recall": 0.35625,
-    "f1-score": 0.3333333333333333,
+    "precision": 0.3103448275862069,
+    "recall": 0.3375,
+    "f1-score": 0.32335329341317365,
     "support": 160.0
   },
   "white margined moth": {
-    "precision": 0.5,
-    "recall": 0.07692307692307693,
-    "f1-score": 0.13333333333333333,
+    "precision": 0.36363636363636365,
+    "recall": 0.15384615384615385,
+    "f1-score": 0.21621621621621623,
     "support": 26.0
   },
   "whitefly": {
-    "precision": 0.6516587677725119,
-    "recall": 0.8487654320987654,
-    "f1-score": 0.7372654155495979,
+    "precision": 0.6928934010152284,
+    "recall": 0.8425925925925926,
+    "f1-score": 0.7604456824512534,
     "support": 324.0
   },
   "wireworm": {
-    "precision": 0.6285714285714286,
-    "recall": 0.6875,
-    "f1-score": 0.6567164179104478,
+    "precision": 0.6733333333333333,
+    "recall": 0.63125,
+    "f1-score": 0.6516129032258065,
     "support": 160.0
   },
   "yellow cutworm": {
-    "precision": 0.2631578947368421,
+    "precision": 0.2564102564102564,
     "recall": 0.11627906976744186,
-    "f1-score": 0.16129032258064516,
+    "f1-score": 0.16,
     "support": 86.0
   },
   "yellow rice borer": {
-    "precision": 0.5362318840579711,
-    "recall": 0.4065934065934066,
-    "f1-score": 0.4625,
+    "precision": 0.5671641791044776,
+    "recall": 0.4175824175824176,
+    "f1-score": 0.4810126582278481,
     "support": 91.0
   },
-  "accuracy": 0.6248497682138155,
+  "accuracy": 0.6391003262175928,
   "macro avg": {
-    "precision": 0.5888638080193864,
-    "recall": 0.5125875976645963,
-    "f1-score": 0.5262220365091358,
+    "precision": 0.6023648609031922,
+    "recall": 0.5370827201773748,
+    "f1-score": 0.5523581723404829,
     "support": 17473.0
   },
   "weighted avg": {
-    "precision": 0.6094875106637359,
-    "recall": 0.6248497682138155,
-    "f1-score": 0.6037398515912646,
+    "precision": 0.6241279861570643,
+    "recall": 0.6391003262175928,
+    "f1-score": 0.620769010676139,
     "support": 17473.0
   }
 }

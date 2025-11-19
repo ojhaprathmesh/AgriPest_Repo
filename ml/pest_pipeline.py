@@ -44,7 +44,7 @@ class PipelineConfig:
     train_ratio: float = 0.7
     seed: int = 42
     batch_size: int = 32
-    epochs: int = 20
+    epochs: int = 75
     learning_rate: float = 1e-4
     resnet_variant: str = "resnet50v2"
     freeze_backbone: bool = True
@@ -59,7 +59,7 @@ class PipelineConfig:
     framework: str = "tf"
     num_workers: int = 4
     amp_dtype: str = "bf16"
-    min_images_harmful: int = 75
+    min_images_harmful: int = 175
 
 
 class ConfigLoader:
@@ -504,11 +504,11 @@ class TrainerEvaluator:
             preds = model.predict(batch_images, verbose=0)
             y_pred.extend(np.argmax(preds, axis=1).tolist())
             y_true.extend(np.argmax(batch_labels.numpy(), axis=1).tolist())
-        report = classification_report(y_true, y_pred, target_names=class_names, output_dict=True)
+        report = classification_report(y_true, y_pred, target_names=class_names, output_dict=True, zero_division=0)
         cm = confusion_matrix(y_true, y_pred)
         with open(self.reports_dir / "metrics.json", "w", encoding="utf-8") as f:
             json.dump(report, f, indent=2)
-        txt = classification_report(y_true, y_pred, target_names=class_names)
+        txt = classification_report(y_true, y_pred, target_names=class_names, zero_division=0)
         with open(self.reports_dir / "metrics.txt", "w", encoding="utf-8") as f:
             f.write(txt)
         self._write_metrics_csv(report)
@@ -976,9 +976,245 @@ class TorchTrainerEvaluator:
             w.writeheader()
             for r in rows:
                 w.writerow(r)
+    def _plot_class_metrics(self, report: Dict, cm, class_names: List[str], probs_all, y_pred):
+        import matplotlib.pyplot as plt
+        import numpy as np
+        recalls = []
+        precisions = []
+        f1s = []
+        for i, name in enumerate(class_names):
+            d = report.get(name, {})
+            recalls.append(float(d.get("recall", 0.0)))
+            precisions.append(float(d.get("precision", 0.0)))
+            f1s.append(float(d.get("f1-score", 0.0)))
+        plt.figure(figsize=(12,7))
+        x = np.arange(len(class_names))
+        w = 0.25
+        plt.bar(x - w, precisions, width=w, label="precision")
+        plt.bar(x, recalls, width=w, label="recall")
+        plt.bar(x + w, f1s, width=w, label="f1")
+        from textwrap import shorten
+        short = [shorten(s, width=18, placeholder="…") for s in class_names]
+        plt.xticks(x, short, rotation=90, ha="center", fontsize=6)
+        plt.legend()
+        plt.title("Precision/Recall/F1 per class")
+        plt.subplots_adjust(bottom=0.32)
+        plt.savefig(self.plots_dir / "prf1_per_class_torch.png")
+        plt.close()
+        acc_per_class = []
+        for i in range(len(class_names)):
+            total_i = cm[i].sum() if cm[i].sum() > 0 else 0
+            acc_i = (cm[i, i] / total_i) if total_i > 0 else 0.0
+            acc_per_class.append(float(acc_i))
+        plt.figure(figsize=(12,7))
+        plt.bar(np.arange(len(class_names)), acc_per_class)
+        short = [shorten(s, width=18, placeholder="…") for s in class_names]
+        plt.xticks(np.arange(len(class_names)), short, rotation=90, ha="center", fontsize=6)
+        plt.ylabel("Accuracy")
+        plt.title("Class-wise accuracy")
+        plt.subplots_adjust(bottom=0.32)
+        plt.savefig(self.plots_dir / "class_accuracy_torch.png")
+        plt.close()
+        if probs_all:
+            arr = np.array(probs_all)
+            pred = np.array(y_pred)
+            conf = arr[np.arange(len(pred)), pred]
+            means = []
+            for i in range(len(class_names)):
+                idx = np.where(pred == i)[0]
+                m = float(conf[idx].mean()) if idx.size > 0 else 0.0
+                means.append(m)
+            plt.figure(figsize=(12,7))
+            plt.bar(np.arange(len(class_names)), means)
+            short = [shorten(s, width=18, placeholder="…") for s in class_names]
+            plt.xticks(np.arange(len(class_names)), short, rotation=90, ha="center", fontsize=6)
+            plt.ylabel("Mean confidence")
+            plt.title("Prediction confidence per class")
+            plt.subplots_adjust(bottom=0.32)
+            plt.savefig(self.plots_dir / "prediction_confidence_torch.png")
+            plt.close()
+    def _plot_image_distribution(self):
+        import matplotlib.pyplot as plt
+        import numpy as np
+        def count_images(d: Path) -> Dict[str, int]:
+            res = {}
+            if d.exists():
+                for c in sorted([p for p in d.iterdir() if p.is_dir()]):
+                    cnt = 0
+                    for p in c.rglob("*"):
+                        if p.is_file() and p.suffix.lower() in {".jpg", ".jpeg", ".png", ".bmp"}:
+                            cnt += 1
+                    res[c.name] = cnt
+            return res
+        tr = count_images(self.train_dir)
+        te = count_images(self.test_dir)
+        classes = sorted(set(list(tr.keys()) + list(te.keys())))
+        tr_counts = [tr.get(k, 0) for k in classes]
+        te_counts = [te.get(k, 0) for k in classes]
+        x = np.arange(len(classes))
+        w = 0.4
+        plt.figure(figsize=(16,7))
+        plt.bar(x - w/2, tr_counts, width=w, label="train")
+        plt.bar(x + w/2, te_counts, width=w, label="test")
+        from textwrap import shorten
+        short = [shorten(s, width=18, placeholder="…") for s in classes]
+        plt.xticks(x, short, rotation=90, ha="center", fontsize=6)
+        plt.ylabel("Images")
+        plt.title("Image distribution per class")
+        plt.legend()
+        plt.subplots_adjust(bottom=0.4)
+        plt.savefig(self.plots_dir / "image_distribution_torch.png")
+        plt.close()
+    def _plot_color_histogram(self):
+        import matplotlib.pyplot as plt
+        import numpy as np
+        from PIL import Image
+        import random
+        imgs = []
+        for c in sorted([p for p in self.test_dir.iterdir() if p.is_dir()]):
+            files = [p for p in c.iterdir() if p.is_file() and p.suffix.lower() in {".jpg", ".jpeg", ".png", ".bmp"}]
+            random.shuffle(files)
+            imgs.extend(files[:5])
+        r_vals = []
+        g_vals = []
+        b_vals = []
+        for p in imgs[:100]:
+            try:
+                im = Image.open(p).convert("RGB")
+                im = im.resize((256, 256))
+                arr = np.array(im)
+                r_vals.extend(arr[:, :, 0].flatten().tolist())
+                g_vals.extend(arr[:, :, 1].flatten().tolist())
+                b_vals.extend(arr[:, :, 2].flatten().tolist())
+            except Exception:
+                pass
+        plt.figure(figsize=(10,7))
+        bins = 128
+        plt.hist(r_vals, bins=bins, alpha=0.5, color="r", label="R")
+        plt.hist(g_vals, bins=bins, alpha=0.5, color="g", label="G")
+        plt.hist(b_vals, bins=bins, alpha=0.5, color="b", label="B")
+        plt.title("Color channel histogram")
+        plt.xlabel("Intensity")
+        plt.ylabel("Frequency")
+        plt.legend()
+        plt.subplots_adjust(bottom=0.1)
+        plt.savefig(self.plots_dir / "color_histogram_torch.png")
+        plt.close()
+    def _plot_roc_curve(self, y_true, probs_all, class_names: List[str]):
+        import matplotlib.pyplot as plt
+        import numpy as np
+        from sklearn.preprocessing import label_binarize
+        from sklearn.metrics import roc_curve, auc
+        if not probs_all:
+            return
+        y = np.array(y_true)
+        P = np.array(probs_all)
+        P = np.nan_to_num(P, nan=0.0, posinf=1.0, neginf=0.0)
+        Y = label_binarize(y, classes=list(range(P.shape[1])))
+        plt.figure(figsize=(8,6))
+        for i in range(P.shape[1]):
+            if Y[:, i].sum() == 0 or (Y[:, i] == 0).sum() == 0:
+                continue
+            fpr, tpr, _ = roc_curve(Y[:, i], P[:, i])
+            a = auc(fpr, tpr)
+            plt.plot(fpr, tpr, label=f"{class_names[i]} (AUC={a:.2f})")
+        plt.plot([0,1],[0,1],"k--")
+        plt.xlabel("False Positive Rate")
+        plt.ylabel("True Positive Rate")
+        plt.title("ROC Curve")
+        plt.legend(loc="lower right")
+        plt.subplots_adjust(bottom=0.12)
+        plt.savefig(self.plots_dir / "roc_torch.png")
+        plt.close()
+    def generate_gradcam(self, num_samples: int = 5):
+        import torch
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from PIL import Image
+        from torchvision import transforms, datasets
+        size = self.cfg.image_size[0]
+        tfm = transforms.Compose([
+            transforms.Resize((size, size)),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225]),
+        ])
+        ds = datasets.ImageFolder(str(self.test_dir), transform=tfm)
+        class_names = ds.classes
+        loader = DataLoader(ds, batch_size=1, shuffle=True)
+        model = self._build_model(num_classes=len(class_names))
+        best_path = self.model_dir / "best_model_torch.pth"
+        final_path = self.model_dir / "final_model_torch.pth"
+        if best_path.exists():
+            model.load_state_dict(torch.load(best_path, map_location=self.device, weights_only=True))
+        elif final_path.exists():
+            model.load_state_dict(torch.load(final_path, map_location=self.device, weights_only=True))
+        model.eval()
+        target_layer = None
+        for n, m in model.named_modules():
+            if n == "layer4.2.conv3":
+                target_layer = m
+                break
+        acts = []
+        grads = []
+        def fhook(module, inp, out):
+            acts.append(out.detach())
+        def bhook(module, gin, gout):
+            grads.append(gout[0].detach())
+        if target_layer is None:
+            return
+        h1 = target_layer.register_forward_hook(fhook)
+        h2 = target_layer.register_backward_hook(bhook)
+        saved = 0
+        samples = []
+        for imgs, labels in loader:
+            if saved >= num_samples:
+                break
+            imgs = imgs.to(self.device)
+            for g in [acts, grads]:
+                g.clear()
+            out = model(imgs)
+            cls = out.argmax(dim=1).item()
+            score = out[:, cls].sum()
+            model.zero_grad(set_to_none=True)
+            score.backward()
+            A = acts[0]
+            G = grads[0]
+            w = G.mean(dim=(2,3), keepdim=True)
+            cam = (A * w).sum(dim=1)
+            cam = torch.relu(cam)
+            cam = torch.nn.functional.interpolate(cam.unsqueeze(1), size=(size, size), mode="bilinear", align_corners=False)
+            cam = cam.squeeze(1)[0].cpu().numpy()
+            cam = (cam - cam.min()) / (cam.max() - cam.min() + 1e-6)
+            img_np = imgs[0].cpu().numpy().transpose(1,2,0)
+            img_np = (img_np * np.array([0.229,0.224,0.225]) + np.array([0.485,0.456,0.406])).clip(0,1)
+            plt.figure(figsize=(6,5))
+            plt.imshow(img_np)
+            plt.imshow(cam, cmap="jet", alpha=0.4)
+            plt.axis("off")
+            plt.tight_layout()
+            plt.savefig(self.plots_dir / f"gradcam_torch_{saved+1}.png")
+            plt.close()
+            samples.append((img_np, cam, cls))
+            saved += 1
+        h1.remove()
+        h2.remove()
+        if samples:
+            cols = len(samples)
+            fig, axes = plt.subplots(1, cols, figsize=(3.8*cols, 3.2))
+            if cols == 1:
+                axes = [axes]
+            for i, (img_np, cam, cls) in enumerate(samples):
+                axes[i].imshow(img_np)
+                axes[i].imshow(cam, cmap="jet", alpha=0.4)
+                axes[i].axis("off")
+            plt.subplots_adjust(wspace=0.05, hspace=0.05)
+            plt.savefig(self.plots_dir / "gradcam_torch_grid.png")
+            plt.close()
 
     def evaluate(self) -> Dict:
         from sklearn.metrics import classification_report, confusion_matrix
+        from sklearn.preprocessing import label_binarize
+        from sklearn.metrics import roc_curve, auc
         import seaborn as sns
         import matplotlib.pyplot as plt
         size = self.cfg.image_size[0]
@@ -996,33 +1232,53 @@ class TorchTrainerEvaluator:
         best_path = self.model_dir / "best_model_torch.pth"
         final_path = self.model_dir / "final_model_torch.pth"
         if best_path.exists():
-            model.load_state_dict(torch.load(best_path, map_location=self.device))
+            model.load_state_dict(torch.load(best_path, map_location=self.device, weights_only=True))
         elif final_path.exists():
-            model.load_state_dict(torch.load(final_path, map_location=self.device))
+            model.load_state_dict(torch.load(final_path, map_location=self.device, weights_only=True))
         model.eval()
         y_true = []
         y_pred = []
+        probs_all = []
         with torch.no_grad():
             for imgs, labels in loader:
                 imgs = imgs.to(self.device, non_blocking=True)
+                imgs = imgs.contiguous()
                 outputs = model(imgs)
-                preds = outputs.argmax(dim=1).cpu().tolist()
+                probs = torch.softmax(outputs, dim=1)
+                preds = probs.argmax(dim=1).cpu().tolist()
                 y_pred.extend(preds)
+                probs_all.extend(probs.cpu().numpy().tolist())
                 y_true.extend(labels.cpu().tolist())
-        report = classification_report(y_true, y_pred, target_names=class_names, output_dict=True)
+        report = classification_report(y_true, y_pred, target_names=class_names, output_dict=True, zero_division=0)
         cm = confusion_matrix(y_true, y_pred)
         with open(self.reports_dir / "metrics_torch.json", "w", encoding="utf-8") as f:
             json.dump(report, f, indent=2)
-        txt = classification_report(y_true, y_pred, target_names=class_names)
+        txt = classification_report(y_true, y_pred, target_names=class_names, zero_division=0)
         with open(self.reports_dir / "metrics_torch.txt", "w", encoding="utf-8") as f:
             f.write(txt)
-        plt.figure(figsize=(7,6))
-        sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=class_names, yticklabels=class_names)
+        plt.figure(figsize=(10,9))
+        from textwrap import shorten
+        short = [shorten(s, width=22, placeholder="…") for s in class_names]
+        ax = sns.heatmap(cm, annot=True, fmt="d", cmap="mako", xticklabels=short, yticklabels=short, square=True, linewidths=0.4, linecolor="#eee", cbar_kws={"shrink":0.8})
+        ax.set_xticklabels(short, rotation=90, fontsize=6)
+        ax.set_yticklabels(short, rotation=0, fontsize=6)
         plt.xlabel("Predicted")
         plt.ylabel("True")
-        plt.tight_layout()
+        plt.subplots_adjust(left=0.2, bottom=0.28)
         plt.savefig(self.plots_dir / "confusion_matrix_torch.png")
         plt.close()
+        self._plot_class_metrics(report, cm, class_names, probs_all, y_pred)
+        self._plot_image_distribution()
+        self._plot_color_histogram()
+        self._plot_roc_curve(y_true, probs_all, class_names)
+        try:
+            self.generate_gradcam(num_samples=5)
+        except Exception:
+            pass
+        try:
+            self._plot_train_val_combined()
+        except Exception:
+            pass
         return {"report": report, "confusion_matrix": cm.tolist()}
 
     def _write_preprocessing_doc(self, counts: Dict[str, int], stats: Dict[str, int]) -> None:
@@ -1048,6 +1304,66 @@ class TorchTrainerEvaluator:
             json.dump(stats, f, indent=2)
         with open(doc_dir / "preprocessing.md", "w", encoding="utf-8") as f:
             f.write("\n".join(lines))
+
+    def _plot_train_val_combined(self):
+        import matplotlib.pyplot as plt
+        import json
+        import csv
+        hist = None
+        jpath = self.reports_dir / "training_history.json"
+        if jpath.exists():
+            try:
+                with open(jpath, "r", encoding="utf-8") as f:
+                    hist = json.load(f)
+            except Exception:
+                hist = None
+        if isinstance(hist, dict) and "history" in hist:
+            hist = hist["history"]
+        if hist is None:
+            cpath = self.reports_dir / "training_history_torch.csv"
+            if cpath.exists():
+                acc = []
+                val_acc = []
+                loss = []
+                val_loss = []
+                with open(cpath, "r", encoding="utf-8") as f:
+                    r = csv.DictReader(f)
+                    for row in r:
+                        a = row.get("accuracy")
+                        va = row.get("val_accuracy")
+                        l = row.get("loss")
+                        vl = row.get("val_loss")
+                        acc.append(float(a) if a not in (None, "", "nan") else float("nan"))
+                        val_acc.append(float(va) if va not in (None, "", "nan") else float("nan"))
+                        loss.append(float(l) if l not in (None, "", "nan") else float("nan"))
+                        val_loss.append(float(vl) if vl not in (None, "", "nan") else float("nan"))
+                hist = {"accuracy": acc, "val_accuracy": val_acc, "loss": loss, "val_loss": val_loss}
+        if hist:
+            acc = hist.get("accuracy", [])
+            val_acc = hist.get("val_accuracy", [])
+            loss = hist.get("loss", [])
+            val_loss = hist.get("val_loss", [])
+            if (acc and val_acc) or (loss and val_loss):
+                plt.figure(figsize=(10,5))
+                ax1 = plt.subplot(1,2,1)
+                if acc and val_acc:
+                    ax1.plot(acc, label="train")
+                    ax1.plot(val_acc, label="val")
+                    ax1.set_title("Accuracy")
+                    ax1.set_xlabel("Epoch")
+                    ax1.set_ylabel("Accuracy")
+                    ax1.legend(fontsize=8)
+                ax2 = plt.subplot(1,2,2)
+                if loss and val_loss:
+                    ax2.plot(loss, label="train")
+                    ax2.plot(val_loss, label="val")
+                    ax2.set_title("Loss")
+                    ax2.set_xlabel("Epoch")
+                    ax2.set_ylabel("Loss")
+                    ax2.legend(fontsize=8)
+                plt.tight_layout()
+                plt.savefig(self.plots_dir / "training_validation_torch.png")
+                plt.close()
 
 
 def main():
